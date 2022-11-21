@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const fetchNumber = (number: string) => {
-  axios
-    .get(`http://localhost:8000/testAPI?number=${number}`)
-    .then(({ data }) => {
-      //@ts-ignore
-      return data.binary;
-    })
-    .catch((err) => console.log(err));
-};
-
 const alignCenter = {
   display: 'flex',
   alignItems: 'center',
@@ -22,9 +12,14 @@ export const Binaryer = () => {
   const [number, setNumber] = useState('');
   const [binaryNumber, setBinaryNumber] = useState('');
 
-  const onSubmit = async () => {
-    const bin = await fetchNumber(number);
-    if (bin !== undefined) setBinaryNumber(bin);
+  const fetchBinary = () => {
+    axios
+      .get(`http://localhost:8000/testAPI?number=${number}`)
+      .then(({ data }) => {
+        //@ts-ignore
+        setBinaryNumber(data.binary);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -38,7 +33,7 @@ export const Binaryer = () => {
             setNumber(e.target.value);
           }}
         />
-        <button onClick={onSubmit}>Submit</button>
+        <button onClick={fetchBinary}>Submit</button>
       </div>
 
       <div>
