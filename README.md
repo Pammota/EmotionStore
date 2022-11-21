@@ -1,4 +1,14 @@
-# Docker + Django + React App Tutorial
+## How to start project
+
+1. Install Docker Desktop
+2. `docker-compose build`
+3. `source z_init` (must use git bash)
+4. `start`
+5. visit `http://localhost:3000`
+6. enjoy
+
+## --------------------------------------
+## Docker + Django + React App Tutorial
 
 Code repo for a series of tutorials on setting up an app with Docker Compose, Django, and Create React App. `master` has the final version of the code.
 
