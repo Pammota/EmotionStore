@@ -1,0 +1,1 @@
+export { NumbersGetter } from './NumbersGetter';

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+usage ()
+{
+  echo 'Usage: gct -n <issue-number> -m <message>'
+  exit
+}
+
+[ "$#" -ne 4 ] && usage
+
+while getopts n:m: flag
+do
+    case ${flag} in
+        n) number=${OPTARG};;
+        m) message=${OPTARG};;
+    esac
+done
+
+re1='^[0-9]+$'
+if ! [[ $number =~ $re1 ]] ; then
+   echo "error: n is not a number" >&2; exit 1
+fi
+
+first="QubizApps/process-suite#";
+git commit -m "$first$number: $message";
