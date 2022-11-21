@@ -1,11 +1,16 @@
-## How to start project
+# Emotion Store Project
 
+## How to start app
 1. Install Docker Desktop
 2. `docker-compose build`
 3. `source z_init` (must use git bash)
 4. `start`
 5. visit `http://localhost:3000`
 6. enjoy
+
+## How to stop app
+- `stop` (must run `source z_init` at least once in shell before use)
+
 
 ## --------------------------------------
 ## Docker + Django + React App Tutorial
