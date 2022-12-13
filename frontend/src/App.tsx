@@ -7,12 +7,12 @@ import { NumbersGetter } from './components/NumbersGetter';
 function App() {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      {/* <Colorful speed={6}> */}
-      <Typography variant="h1" sx={{ fontWeight: 600, mixBlendMode: 'difference', fontSize: 30 }}>
-        <NumbersGetter />
-        <Binaryer />
-      </Typography>
-      {/* </Colorful> */}
+      <Colorful speed={100}>
+        <Typography variant="h1" sx={{ fontWeight: 600, color: 'black', fontSize: 30 }}>
+          <NumbersGetter />
+          <Binaryer />
+        </Typography>
+      </Colorful>
     </div>
   );
 }
